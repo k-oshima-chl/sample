@@ -19,49 +19,8 @@ import calendar
 
 interval_count = 12
 
-host= os.environ['HOST']
-port= os.environ['PORT']
-
-database = os.environ['DATABASE']
-username = os.environ['USERNAME']
-password = os.environ['PASSWORD']
-charset = os.environ['CHARSET']
-
-def insert_mysql(players_list):
-
-	connection = MySQLdb.connect(host=host,
-								port=port,
-								db=database,
-								user=username,
-								passwd=password,
-								charset=charset)
-	cursor = connection.cursor()
-
-	for player in players_list:
-
-		print "-------------------------------------"
-
-		string = 'NULL,'
-		size = len(player)
-		for s in player:
-			string +=  '"' +str(s)+'"'
-			print string
-			
-			size -= 1
-			if size == 0:
-				break
-			else:
-				string += ','
-
-		sql = 'insert into game_schedule values(%s)'%(string)
-		print "sql = [%s]"%(sql)
-
-		cursor.execute(sql)
-
-	connection.commit()
-	cursor.close()
-	connection.close()
-
+#db名やパスワード名を記述
+#ここにinsert_mysqlが書いてあった。
 
 def date_revise(date):
 
