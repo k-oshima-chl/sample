@@ -19,6 +19,9 @@ import calendar
 
 interval_count = 12
 
+#db名やパスワード名を記述
+#ここにinsert_mysqlが書いてあった。
+
 def date_revise(date):
 
 	#月,日を格納
