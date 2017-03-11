@@ -19,50 +19,6 @@ import calendar
 
 interval_count = 12
 
-host= os.environ['HOST']
-port= os.environ['PORT']
-
-database = os.environ['DATABASE']
-username = os.environ['USERNAME']
-password = os.environ['PASSWORD']
-charset = os.environ['CHARSET']
-
-def insert_mysql(players_list):
-
-	connection = MySQLdb.connect(host=host,
-								port=port,
-								db=database,
-								user=username,
-								passwd=password,
-								charset=charset)
-	cursor = connection.cursor()
-
-	for player in players_list:
-
-		print "-------------------------------------"
-
-		string = 'NULL,'
-		size = len(player)
-		for s in player:
-			string +=  '"' +str(s)+'"'
-			print string
-			
-			size -= 1
-			if size == 0:
-				break
-			else:
-				string += ','
-
-		sql = 'insert into game_schedule values(%s)'%(string)
-		print "sql = [%s]"%(sql)
-
-		cursor.execute(sql)
-
-	connection.commit()
-	cursor.close()
-	connection.close()
-
-
 def date_revise(date):
 
 	#月,日を格納
@@ -814,32 +770,36 @@ if __name__ == '__main__':
 	elapsed_time = time.time() - start
 	process_time_print(format(elapsed_time))
 
-
-	# start = time.time()
-	# bundes_list = leage_schedule(bundes,1)	
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))	
-
-
-	# start = time.time()
-	# spain_list = leage_schedule(spain,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	bundes_list = leage_schedule(bundes,1)	
+	print puremia_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))	
 
 
-	# start = time.time()
-	# serie_a_list = leage_schedule(serie_a,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	spain_list = leage_schedule(spain,1)
+	print spain_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
 
 
-	# start = time.time()
-	# leage_an_list = leage_schedule(leage_an,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	serie_a_list = leage_schedule(serie_a,1)
+	print serie_a_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
 
 
-	# start = time.time()		
-	# oranda_list = leage_schedule(oranda,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	leage_an_list = leage_schedule(leage_an,1)
+	print leage_an_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
+
+
+	start = time.time()		
+	oranda_list = leage_schedule(oranda,1)
+	print oranda_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
