@@ -807,6 +807,8 @@ if __name__ == '__main__':
 	serie_a = "53"
 	leage_an = "54"
 	oranda = "2"
+	
+	print "Test start"
 
 	start = time.time()
 	puremia_list = leage_schedule(puremia,1)
