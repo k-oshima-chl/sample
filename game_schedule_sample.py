@@ -774,31 +774,36 @@ if __name__ == '__main__':
 	process_time_print(format(elapsed_time))
 
 
-	# start = time.time()
-	# bundes_list = leage_schedule(bundes,1)	
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))	
+	start = time.time()
+	bundes_list = leage_schedule(bundes,1)	
+	print bundes_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))	
 
 
-	# start = time.time()
-	# spain_list = leage_schedule(spain,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	spain_list = leage_schedule(spain,1)
+	print spain_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
 
 
-	# start = time.time()
-	# serie_a_list = leage_schedule(serie_a,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	serie_a_list = leage_schedule(serie_a,1)
+	print serie_a_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
 
 
-	# start = time.time()
-	# leage_an_list = leage_schedule(leage_an,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()
+	leage_an_list = leage_schedule(leage_an,1)
+	print leage_an_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
 
 
-	# start = time.time()		
-	# oranda_list = leage_schedule(oranda,1)
-	# elapsed_time = time.time() - start
-	# process_time_print(format(elapsed_time))
+	start = time.time()		
+	oranda_list = leage_schedule(oranda,1)
+	print oranda_list
+	elapsed_time = time.time() - start
+	process_time_print(format(elapsed_time))
